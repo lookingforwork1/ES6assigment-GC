@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <!DOCTYPE html>
+    <html>
+
+    <body>
+        <p> Create an Employee class.
+            ● An employee should have
+            ○ name
+            ○ Id number
+            ○ List of permissions that they can perform on the company website
+            ○ Store number for the store where they work </p>
+
+        <p> Create a Manager class.
+            ● A manager is a type of employee.
+            ● A manager should should have
+            ○ name
+            ○ Id number
+            ○ List of permissions that they can perform on the company website
+            ○ Store number for the store where they work
+            ○ List of employees they manage
+            ○ The ability to change the </p>
+
+        <script>
+           const permissions = ['view','update','delete']
+           class Employee {
+                constructor (name, ID, permissions, storeID) {
+                    this.name = name
+                    this.ID = ID
+                    this.permissions = permissions['view','update']
+                    this.storeID = storeID
+                    
+                }
+
+            }
+
+            class Manager extends Employee{
+                constructor (name, ID, permissions, storeID, subordinates, editEmpPerms){
+                super(ID);
+                this.permissions = permissions
+                this.subordinates = subordinates
+                this.editEmpPerms = editEmpPerms
+
+                
+                }
+
+                
+                
+            }
+
+
+
+        </script>
+    </body>
+    </html>
