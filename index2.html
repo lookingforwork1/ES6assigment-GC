@@ -24,34 +24,52 @@
             ○ The ability to change the </p>
 
         <script>
-           const permissions = ['view','update','delete']
            class Employee {
-                constructor (name, ID, permissions, storeID) {
-                    this.name = name
-                    this.ID = ID
-                    this.permissions = permissions['view','update']
-                    this.storeID = storeID
-                    
-                }
-
+               constructor (name, ID, storeID) {
+                   this.name = name;
+                   this.ID = ID;
+                   this.permissions = ['read'];
+                   this.storeID = storeID;
+               }
+        
             }
 
-            class Manager extends Employee{
-                constructor (name, ID, permissions, storeID, subordinates, editEmpPerms){
-                super(ID);
-                this.permissions = permissions
-                this.subordinates = subordinates
-                this.editEmpPerms = editEmpPerms
+            const employee1 = new Employee('Frank', 1, 672)
+            const employee3 = new Employee ('Harry', 4, 672)
+            console.log(employee1);
+            
 
-                
+            class Manager extends Employee {
+                constructor (name, ID, storeID, subordinates, editEmpPerms) {
+                super(name, ID, storeID);
+                this.permissions = ['read','edit','delete'];
+                this.subordinates = subordinates;
+                this.editEmpPerms = editEmpPerms;
                 }
 
-                
-                
+                change_permission(new_permission, employee){
+                employee.permissions = new_permission;
+                }
+
+            
             }
+            
+            
+            const employee2 = new Manager('Mary', 2, 672, ["Frank", "Payne"])
+            console.log(employee2);
+            
+            
+            employee2.change_permission(['read', 'edit'], employee3)
+            console.log(employee3);
+
+
+
+            
 
 
 
         </script>
+
     </body>
+
     </html>
